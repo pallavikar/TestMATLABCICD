@@ -12,7 +12,7 @@ pool:
 steps:
   - script: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/install.sh | sudo -E bash
   - script: matlab -batch "disp('Hello World')"
- # - script: cd Software/test/unit
+  - script: cd Software/MATLAB
   - script: matlab -batch "runtests(pwd,'IncludeSubfolders',true)"
 
 #  - script: echo Hello, world!displayName: 'Run a one-line script'
