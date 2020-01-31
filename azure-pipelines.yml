@@ -15,5 +15,5 @@ steps:
   - script: matlab -batch "cd Software/MATLAB"
   - script: matlab -batch "startup"
   - script: matlab -batch "disp('Running Unit Tests')"
-  - script: matlab -batch "cd test/unit"
-  - script: matlab -batch "runtests"
+  #- script: matlab -batch "cd test/unit"
+  - script: matlab -batch "runtests(pwd,'IncludeSubfolders',true)"
