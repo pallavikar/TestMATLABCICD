@@ -5,5 +5,6 @@ script: matlab -batch "disp('Add Two Numbers')"
 script: matlab -batch "cd Software/MATLAB"
 script: matlab -batch "startup"
 script: matlab - batch "disp('Running Unit Tests')"
-script: matlab -batch "cd test/unit; runtests; exit(any(table(ans).Failed));
+script: matlab -batch "cd test/unit"
+script: matlab -batch "runtests"
 
