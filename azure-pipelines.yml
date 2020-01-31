@@ -14,6 +14,6 @@ steps:
   - script: matlab -batch "disp('Hello World')"
   - script: matlab -batch "cd Software/MATLAB"
   - script: matlab -batch "startup"
-  - script: matlab - batch "disp('Running Unit Tests')"
+  - script: matlab -batch "disp('Running Unit Tests')"
   - script: matlab -batch "cd test/unit"
   - script: matlab -batch "runtests"

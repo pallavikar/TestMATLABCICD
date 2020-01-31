@@ -4,7 +4,7 @@ install: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimag
 script: matlab -batch "disp('Add Two Numbers')"
 script: matlab -batch "cd Software/MATLAB"
 script: matlab -batch "startup"
-script: matlab - batch "disp('Running Unit Tests')"
+script: matlab -batch "disp('Running Unit Tests')"
 script: matlab -batch "cd test/unit"
 script: matlab -batch "runtests"
 
