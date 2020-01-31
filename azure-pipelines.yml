@@ -13,7 +13,7 @@ steps:
   - script: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/install.sh | sudo -E bash
   - script: matlab -batch "disp('Hello World')"
  # - script: cd Software/test/unit
-  - script:matlab -batch runtests(pwd,'IncludeSubfolders',true);
+  - script: matlab -batch runtests(pwd,'IncludeSubfolders',true);
 
 #  - script: echo Hello, world!displayName: 'Run a one-line script'
 
