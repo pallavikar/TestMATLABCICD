@@ -2,7 +2,7 @@ function outstr = addnum(inputstr)
 %ADDNUM Recieves JSON string with two numbers and Returns sum as JSON string
 
 % JSON received to MATLAB struct
-%inputstr = jsondecode(inputstr);
+inputstr = jsondecode(inputstr);
 
 % struct with two numbers a and b
 a = inputstr.a;

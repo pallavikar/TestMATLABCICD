@@ -2,4 +2,8 @@ language: minimal
 dist: xenial
 install: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/install.sh | sudo -E bash
 script: matlab -batch "disp('Add Two Numbers')"
+script: matlab - batch "disp('Running Unit Tests')"
+script: 
+    -cd Software/test/unit
+script:matlab -batch runtests('IncludeSubfolders', true);
 
