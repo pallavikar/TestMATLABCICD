@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dependencies>
+	<module>
+		<name>Serializable</name>
+		<type>git</type>
+		<url>git@insidelabs-git.mathworks.com:ahosagra/serializable.git</url>
+	</module>
+</dependencies>
