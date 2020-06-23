@@ -1,22 +1,13 @@
 language: minimal
 dist: xenial
 install: wget -qO- --retry-connrefused https://ssd.mathworks.com/supportfiles/ci/ephemeral-matlab/v0/install.sh | sudo -E bash
-script: echo "## Building Google Cloud Platform dependencies"
-#script: cd matlab-gcp-common/Software/Java;
-#script: mvn clean package
-#script: echo "## Writing Google Cloud credentials from environment variables"
-#script: cd ../../../matlab-google-cloud-storage/Software/MATLAB/config/
-script: echo -e "{\n \"auth_uri\":\"$auth_uri\"," > credentials.json
-script: echo -e "\n\"client_x509_cert_url\":\"$client_x509_cert_url\"\n}" >> credentials.json
-script: cat credentials.json 
-script: pwd 
-script: export GOOGLE_APPLICATION_PATH=`pwd`
-script: export GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_PATH/credentials.json 
-script: matlab -batch "getenv('GOOGLE_APPLICATION_CREDENTIALS')"          
-script: matlab -batch "disp('Add Two Numbers')"
-script: matlab -batch "cd Software/MATLAB"
-script: matlab -batch "startup"
-script: matlab -batch "disp('Running Unit Tests')"
-script: matlab -batch "cd test/unit"
-script: matlab -batch "runtests(pwd,'IncludeSubfolders',true)"
+script:
+  - echo "## Building Google Cloud Platform dependencies"
+  - echo -e "{\n \"auth_uri\":\"$auth_uri\"," > credentials.json
+  - echo -e "\n\"client_x509_cert_url\":\"$client_x509_cert_url\"\n}" >> credentials.json
+  - cat credentials.json 
+  - pwd 
+  - export GOOGLE_APPLICATION_PATH=`pwd`
+  - export GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_PATH/credentials.json 
+script: matlab -batch "getenv('GOOGLE_APPLICATION_CREDENTIALS'); disp('Add Two Numbers'); cd Software/MATLAB; startup; disp('Running Unit Tests'); cd test/unit; runtests(pwd,'IncludeSubfolders',true);"
 
